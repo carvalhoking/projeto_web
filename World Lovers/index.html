@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Lovers | Cardápio Digital | Hambúrgueres Artesanais</title>
+    <meta name="description" content="Cardápio digital da World Lovers. Hambúrgueres artesanais feitos com ingredientes selecionados e muito amor. Delivery disponível. Peça já!">
+    <meta name="keywords" content="hambúrguer, hamburgueria, artesanal, delivery, cardápio digital, World Lovers, gourmet, Suzano, São Paulo">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="header-content">
+              
+                <!-- Desktop Navigation -->
+                <nav class="nav-desktop">
+                    <a href="#inicio" class="nav-link">Início</a>
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                    <a href="#cardapio" class="nav-link">Cardápio</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                </nav>
+
+                <!-- Desktop Actions -->
+                <div class="header-actions">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema">
+                        <span class="sr-only">Alternar tema</span>
+                    </button>
+                    
+                    <button id="menu-completo-btn" class="btn btn-outline">Ver Cardápio Completo</button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="mobile-controls">
+                    <button id="theme-toggle-mobile" class="theme-toggle-mobile" aria-label="Alternar tema">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
+                    
+                    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav id="mobile-nav" class="nav-mobile">
+                <a href="#inicio" class="nav-link-mobile">Início</a>
+                <a href="#sobre" class="nav-link-mobile">Sobre</a>
+                <a href="#cardapio" class="nav-link-mobile">Cardápio</a>
+                <a href="#contato" class="nav-link-mobile">Contato</a>
+                <button id="menu-completo-mobile-btn" class="btn btn-primary full-width">Ver Cardápio Completo</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-bg">
+                <img src="img/lanches.png" alt="Hambúrguer Premium WL" class="hero-image">
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title fade-in">
+                        <span class="hero-title-main">World</span>
+                        <span class="hero-title-accent">Lovers</span>
+                    </h1>
+                    
+                    <p class="hero-description fade-in">
+                        Hambúrgueres artesanais feitos com ingredientes selecionados e muito amor. Uma experiência gastronômica única te espera na World Lovers.
+                    </p>
+                    
+                    <div class="hero-actions fade-in">
+                        <button class="btn btn-primary btn-large" onclick="scrollToSection('cardapio')">
+                            Explorar Cardápio
+                        </button>
+                        <button class="btn btn-outline btn-large" onclick="openWhatsApp()">
+                            Fazer Pedido
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="hero-decoration hero-decoration-1"></div>
+            <div class="hero-decoration hero-decoration-2"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">Nossa História</h2>
+                        <p class="about-description">
+                            Na World Lovers, cada hambúrguer é uma obra de arte culinária. Fundada com a paixão por criar experiências gastronômicas únicas, utilizamos apenas ingredientes premium e técnicas artesanais para entregar o melhor sabor.
+                        </p>
+                        <p class="about-description">
+                            Nossa carne é selecionada diariamente, nossos pães são frescos e assados na casa, e cada ingrediente é escolhido a dedo para garantir a qualidade excepcional que nossos clientes merecem.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Anos de Experiência</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">1000+</span>
+                                <span class="stat-label">Clientes Satisfeitos</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Sabores Únicos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="img/luis.png" alt="Chef preparando hambúrguer" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Preview Section -->
+        <section id="cardapio" class="menu-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nossos Destaques</h2>
+                    <p class="section-description">Conheça alguns dos nossos hambúrgueres mais populares</p>
+                </div>
+                
+                <div class="menu-grid">
+                    <div class="menu-card">
+                        <img src="img/grecia.png" alt="WL Grécia" class="menu-image">
+                        <div class="menu-content">
+                            <h3 class="menu-title">WL Grécia</h3>
+                            <p class="menu-description">Pão Brioche Macio Seladinho, Blend Burger Suculento de 150g, Queijo Derretido Fatiado, Tomates Frescos Fatiados, Alface Americana Crocante e Fresquinha e Para Finalizar Nossa Maionese Verde</p>
+                            <div class="preço">
+                            <span class="menu-price">R$ 19,90</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="menu-card">
+                        <img src="img/wl brasil.png" alt="WL Brasil" class="menu-image">
+                        <div class="menu-content">
+                            <h3 class="menu-title">WL Brasil</h3>
+                            <p class="menu-description">Pão Brioche Macio Seladinho, Blend Burger Suculento de 150g, Queijo Derretido Fatiado, Bacon Fatiado Defumado na Lenha Frutifera, Tomate Fresco Fatiado, Alface Americana Fresquinha e Crocante e Para Finalizar Nossa Maionese Grill Defumada (Molho da Casa)</p>
+                            <div class="preço">
+                            <span class="menu-price">R$ 25,90</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-card">
+                        <img src="img/duplo bacon.png" alt="Wl Grand Duplo Bacon" class="menu-image">
+                        <div class="menu-content">
+                            <h3 class="menu-title">Wl Grand Duplo Bacon</h3>
+                            <p class="menu-description">Pão Brioche Macio Seladinho, Dois Blend Burgers Suculento de 150g, Duplo de Queijo Derretido 2x, Duplo de Bacon Fatiado e Defumado na Lenha Frutifera 2x, e Para Finalizar Nossa Maionese Verde feita na base de salsa, alho e cebola</p>
+                            <span class="menu-price">R$ 33,90</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-cta">
+                    <button id="ver-cardapio-btn" class="btn btn-primary btn-large">Ver Cardápio Completo</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2 class="section-title">Entre em Contato</h2>
+                        <p class="contact-description">
+                            Estamos prontos para atender você! Entre em contato conosco para fazer seu pedido ou tirar suas dúvidas.
+                        </p>
+                        
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div class="contact-details">
+                                    <h4>Endereço</h4>
+                                    <p>R. Expedicionário João de Carvalho, 281<br>Centro, Suzano - SP, 08674-250</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-details">
+                                    <h4>Telefone</h4>
+                                    <p>(11) 94137-2452</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">🕒</div>
+                                <div class="contact-details">
+                                    <h4>Horário</h4>
+                                    <p>Seg - Dom: 18h às 23h</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-large" onclick="openWhatsApp()">
+                            Fazer Pedido pelo WhatsApp
+                        </button>
+                    </div>
+                    
+                    <div class="contact-image">
+                        <img src="img/qrcode.png" alt="Contato World Lovers" class="contact-img">
+                        <style>
+                            .contact-img {
+                                border-radius: 10px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                max-width: 100%;
+                                height: auto;
+                                transition: transform 0.3s ease;
+                                
+                            }
+                        </style>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo-icon">
+                            <span>WL</span>
+                        </div>
+                        <span class="logo-text">World Lovers</span>
+                    </div>
+                    <p class="footer-description">
+                        Hambúrgueres artesanais feitos com amor e ingredientes selecionados.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <a href="#inicio">Início</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#cardapio">Cardápio</a>
+                    <a href="#contato">Contato</a>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>📍 R. Expedicionário João de Carvalho, 281</p>
+                    <p>📞 (11) 94137-2452</p>
+                    <p>🕒 Seg - Dom: 18h às 23h</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 World Lovers. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Full Menu Modal -->
+    <div id="menu-modal" class="menu-modal">
+        <div class="menu-modal-content">
+            <div class="menu-modal-header">
+                <h2>Cardápio Completo</h2>
+                <button id="close-menu-modal" class="close-btn">&times;</button>
+            </div>
+            
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Todos</button>
+                <button class="category-btn" data-category="classicos">Clássicos</button>
+                <button class="category-btn" data-category="frango">Frango</button>
+                <button class="category-btn" data-category="especiais">Especiais</button>
+                <button class="category-btn" data-category="acompanhamentos">Acompanhamentos</button>
+                <button class="category-btn" data-category="bebidas">Bebidas</button>
+            </div>
+            
+            <div class="full-menu-grid" id="full-menu-items">
+                <!-- Menu items will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
