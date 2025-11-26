@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meu Saldo — Sistema de Gestão Financeira Pessoal</title>
+  <meta name="description" content="Sistema completo de gestão financeira pessoal com análise avançada, relatórios e controle de orçamentos" />
+  <meta name="author" content="Gustavo Carvalho" />
+
+  <!-- Fonte Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Chart.js para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Animado -->
+  <div class="animated-background">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="gradient-orb orb-4"></div>
+    <div class="gradient-orb orb-5"></div>
+    <div class="gradient-orb orb-6"></div>
+    <div class="gradient-orb orb-7"></div>
+    <div class="gradient-orb orb-8"></div>
+    <div class="gradient-orb orb-9"></div>
+    <div class="gradient-orb orb-10"></div>
+    <div class="gradient-orb orb-11"></div>
+    <div class="gradient-orb orb-12"></div>
+    <div class="gradient-orb orb-13"></div>
+    <div class="gradient-orb orb-14"></div>
+    <div class="gradient-orb orb-15"></div>
+    <div class="grid-pattern"></div>
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    <div class="floating-shapes">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+      <div class="shape shape-6"></div>
+      <div class="shape shape-7"></div>
+      <div class="shape shape-8"></div>
+      <div class="shape shape-9"></div>
+      <div class="shape shape-10"></div>
+    </div>
+  </div>
+
+  <!-- Navegação Superior -->
+  <nav class="top-nav">
+    <div class="nav-container">
+      <!-- Menu Hambúrguer (Mobile) -->
+      <button class="menu-toggle" id="menuToggle" onclick="toggleMobileMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Abas de Navegação (Desktop) -->
+      <div class="tabs-container">
+        <button class="tab-btn active" onclick="showTab('transactions')" data-tab="transactions">
+          <i data-lucide="plus-circle" width="18" height="18"></i>
+          Transações
+        </button>
+        <button class="tab-btn" onclick="showTab('analytics')" data-tab="analytics">
+          <i data-lucide="bar-chart-3" width="18" height="18"></i>
+          Análises
+        </button>
+        <button class="tab-btn" onclick="showTab('budgets')" data-tab="budgets">
+          <i data-lucide="target" width="18" height="18"></i>
+          Metas & Orçamentos
+        </button>
+        <button class="tab-btn" onclick="showTab('reports')" data-tab="reports">
+          <i data-lucide="file-text" width="18" height="18"></i>
+          Relatórios
+        </button>
+        <button class="tab-btn" onclick="showTab('categories')" data-tab="categories">
+          <i data-lucide="tag" width="18" height="18"></i>
+          Categorias
+        </button>
+        <button class="tab-btn" onclick="showSettings()">
+          <i data-lucide="settings" width="18" height="18"></i>
+          Configurações
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-header">
+        <h3>Menu</h3>
+        <button class="menu-close" onclick="toggleMobileMenu()" aria-label="Fechar">
+          <i data-lucide="x" width="24" height="24"></i>
+        </button>
+      </div>
+      <div class="mobile-menu-items">
+        <button class="mobile-menu-item active" onclick="showTab('transactions'); toggleMobileMenu();" data-tab="transactions">
+          <i data-lucide="plus-circle" width="20" height="20"></i>
+          <span>Transações</span>
+        </button>
+        <button class="mobile-menu-item" onclick="showTab('analytics'); toggleMobileMenu();" data-tab="analytics">
+          <i data-lucide="bar-chart-3" width="20" height="20"></i>
+          <span>Análises</span>
+        </button>
+        <button class="mobile-menu-item" onclick="showTab('budgets'); toggleMobileMenu();" data-tab="budgets">
+          <i data-lucide="target" width="20" height="20"></i>
+          <span>Metas & Orçamentos</span>
+        </button>
+        <button class="mobile-menu-item" onclick="showTab('reports'); toggleMobileMenu();" data-tab="reports">
+          <i data-lucide="file-text" width="20" height="20"></i>
+          <span>Relatórios</span>
+        </button>
+        <button class="mobile-menu-item" onclick="showTab('categories'); toggleMobileMenu();" data-tab="categories">
+          <i data-lucide="tag" width="20" height="20"></i>
+          <span>Categorias</span>
+        </button>
+        <button class="mobile-menu-item" onclick="showSettings(); toggleMobileMenu();" data-tab="settings">
+          <i data-lucide="settings" width="20" height="20"></i>
+          <span>Configurações</span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+  </nav>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo-container">
+        <span class="logo-text">Meu Saldo</span>
+      </div>
+      <p>Sistema completo de gestão financeira pessoal</p>
+      <div class="current-tab-indicator">
+        <span class="tab-indicator-name" id="currentTabName">Transações</span>
+      </div>
+    </div>
+
+    <!-- Dashboard - Estatísticas Expandidas -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-header">
+          <span class="stat-title">Receitas</span>
+          <div class="stat-icon income">
+            <i data-lucide="trending-up" width="20" height="20"></i>
+          </div>
+        </div>
+        <div class="stat-value positive" id="totalIncome">R$ 0,00</div>
+        <div class="stat-change">
+          <span id="incomeChange">Este mês: R$ 0,00</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <span class="stat-title">Despesas</span>
+          <div class="stat-icon expense">
+            <i data-lucide="trending-down" width="20" height="20"></i>
+          </div>
+        </div>
+        <div class="stat-value negative" id="totalExpense">R$ 0,00</div>
+        <div class="stat-change">
+          <span id="expenseChange">Este mês: R$ 0,00</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <span class="stat-title">Saldo</span>
+          <div class="stat-icon balance">
+            <i data-lucide="wallet" width="20" height="20"></i>
+          </div>
+        </div>
+        <div class="stat-value" id="balance">R$ 0,00</div>
+        <div class="stat-change">
+          <span id="balanceStatus">Status do saldo</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <span class="stat-title">Média Mensal</span>
+          <div class="stat-icon balance">
+            <i data-lucide="bar-chart-2" width="20" height="20"></i>
+          </div>
+        </div>
+        <div class="stat-value" id="monthlyAverage">R$ 0,00</div>
+        <div class="stat-change">Média dos últimos 3 meses</div>
+      </div>
+    </div>
+
+    <!-- Tab: Transações -->
+    <div id="tab-transactions" class="tab-content active">
+      <div class="main-content">
+        <!-- Formulário de Transação -->
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="plus-circle" width="24" height="24"></i>
+            Nova Transação
+          </h2>
+
+          <div class="transaction-type">
+            <button class="type-btn income active" onclick="setTransactionType('income')">
+              <i data-lucide="arrow-down-circle" width="20" height="20"></i>
+              Receita
+            </button>
+            <button class="type-btn expense" onclick="setTransactionType('expense')">
+              <i data-lucide="arrow-up-circle" width="20" height="20"></i>
+              Despesa
+            </button>
+          </div>
+
+          <form id="transactionForm">
+            <div class="form-group">
+              <label for="description">Descrição *</label>
+              <input type="text" id="description" name="description" required placeholder="Ex: Salário, Aluguel, Compras...">
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="amount">Valor (R$) *</label>
+                <input type="number" id="amount" name="amount" step="0.01" min="0.01" required placeholder="0,00">
+              </div>
+
+              <div class="form-group">
+                <label for="category">Categoria *</label>
+                <select id="category" name="category" required>
+                  <option value="">Selecione...</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Data *</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+
+              <div class="form-group">
+                <label for="paymentMethod">Forma de Pagamento</label>
+                <select id="paymentMethod" name="paymentMethod">
+                  <option value="dinheiro">Dinheiro</option>
+                  <option value="cartao_debito">Cartão de Débito</option>
+                  <option value="cartao_credito">Cartão de Crédito</option>
+                  <option value="pix">PIX</option>
+                  <option value="transferencia">Transferência</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Observações</label>
+              <textarea id="notes" name="notes" placeholder="Notas adicionais sobre esta transação..."></textarea>
+            </div>
+
+            <div class="btn-group">
+              <button type="submit" class="btn btn-primary">
+                <i data-lucide="save" width="18" height="18"></i>
+                Salvar Transação
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                <i data-lucide="x" width="18" height="18"></i>
+                Limpar
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Filtros e Lista -->
+        <div class="section">
+          <div class="section-header-row">
+            <h2 class="section-title">
+              <i data-lucide="list" width="24" height="24"></i>
+              Histórico de Transações
+            </h2>
+            <div class="filter-controls">
+              <input type="date" id="filterStartDate" class="date-filter" onchange="applyDateFilter()">
+              <span>até</span>
+              <input type="date" id="filterEndDate" class="date-filter" onchange="applyDateFilter()">
+              <button class="btn btn-secondary" onclick="clearDateFilter()">
+                <i data-lucide="x" width="16" height="16"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-tabs">
+            <button class="filter-tab active" onclick="filterTransactions('all')">Todas</button>
+            <button class="filter-tab" onclick="filterTransactions('income')">Receitas</button>
+            <button class="filter-tab" onclick="filterTransactions('expense')">Despesas</button>
+            <button class="filter-tab" onclick="filterTransactions('month')">Este Mês</button>
+            <button class="filter-tab" onclick="filterTransactions('week')">Esta Semana</button>
+          </div>
+
+          <div class="transactions-list" id="transactionsList">
+            <div class="empty-state">
+              <i data-lucide="receipt" width="64" height="64"></i>
+              <p>Nenhuma transação cadastrada ainda.</p>
+              <p style="margin-top: 10px; font-size: 0.9rem;">Adicione sua primeira transação usando o formulário acima.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Análises -->
+    <div id="tab-analytics" class="tab-content">
+      <div class="analytics-grid">
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="trending-up" width="24" height="24"></i>
+            Evolução Financeira
+          </h2>
+          <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="pie-chart" width="24" height="24"></i>
+            Distribuição por Categoria
+          </h2>
+          <div class="chart-container">
+            <canvas id="pieChart"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="bar-chart-4" width="24" height="24"></i>
+            Comparativo Mensal
+          </h2>
+          <div class="chart-container">
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="activity" width="24" height="24"></i>
+            Análise de Tendências
+          </h2>
+          <div class="insights-container" id="insightsContainer">
+            <!-- Insights serão inseridos aqui -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Metas & Orçamentos -->
+    <div id="tab-budgets" class="tab-content">
+      <div class="main-content">
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="target" width="24" height="24"></i>
+            Nova Meta ou Orçamento
+          </h2>
+          <form id="budgetForm">
+            <div class="form-group">
+              <label for="budgetName">Nome da Meta *</label>
+              <input type="text" id="budgetName" required placeholder="Ex: Economia para viagem">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budgetAmount">Valor Alvo (R$) *</label>
+                <input type="number" id="budgetAmount" step="0.01" min="0.01" required>
+              </div>
+              <div class="form-group">
+                <label for="budgetCategory">Categoria</label>
+                <select id="budgetCategory">
+                  <option value="">Todas as categorias</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="budgetStartDate">Data Início</label>
+                <input type="date" id="budgetStartDate" required>
+              </div>
+              <div class="form-group">
+                <label for="budgetEndDate">Data Fim</label>
+                <input type="date" id="budgetEndDate" required>
+              </div>
+            </div>
+            <div class="btn-group">
+              <button type="submit" class="btn btn-primary">
+                <i data-lucide="save" width="18" height="18"></i>
+                Criar Meta
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="list" width="24" height="24"></i>
+            Metas e Orçamentos Ativos
+          </h2>
+          <div id="budgetsList" class="budgets-list">
+            <div class="empty-state">
+              <i data-lucide="target" width="64" height="64"></i>
+              <p>Nenhuma meta cadastrada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Relatórios -->
+    <div id="tab-reports" class="tab-content">
+      <div class="reports-grid">
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="file-text" width="24" height="24"></i>
+            Relatórios Disponíveis
+          </h2>
+          <div class="reports-list">
+            <button class="report-btn" onclick="generateReport('monthly')">
+              <i data-lucide="calendar" width="20" height="20"></i>
+              <div>
+                <div class="report-title">Relatório Mensal</div>
+                <div class="report-desc">Análise completa do mês atual</div>
+              </div>
+            </button>
+            <button class="report-btn" onclick="generateReport('category')">
+              <i data-lucide="tag" width="20" height="20"></i>
+              <div>
+                <div class="report-title">Por Categoria</div>
+                <div class="report-desc">Gastos agrupados por categoria</div>
+              </div>
+            </button>
+            <button class="report-btn" onclick="generateReport('payment')">
+              <i data-lucide="credit-card" width="20" height="20"></i>
+              <div>
+                <div class="report-title">Por Forma de Pagamento</div>
+                <div class="report-desc">Análise dos métodos de pagamento</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="file-check" width="24" height="24"></i>
+            Relatório Gerado
+          </h2>
+          <div id="reportContent" class="report-content">
+            <div class="empty-state">
+              <i data-lucide="file-text" width="64" height="64"></i>
+              <p>Selecione um relatório para gerar</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Categorias -->
+    <div id="tab-categories" class="tab-content">
+      <div class="main-content">
+        <div class="section">
+          <h2 class="section-title">
+            <i data-lucide="plus-circle" width="24" height="24"></i>
+            Gerenciar Categorias
+          </h2>
+          <div class="categories-management">
+            <div class="category-section">
+              <h3>Categorias de Receitas</h3>
+              <div id="incomeCategoriesList" class="categories-list"></div>
+              <form id="addIncomeCategoryForm" class="add-category-form">
+                <input type="text" id="newIncomeCategory" placeholder="Nova categoria de receita" required>
+                <button type="submit" class="btn btn-primary">
+                  <i data-lucide="plus" width="16" height="16"></i>
+                  Adicionar
+                </button>
+              </form>
+            </div>
+            <div class="category-section">
+              <h3>Categorias de Despesas</h3>
+              <div id="expenseCategoriesList" class="categories-list"></div>
+              <form id="addExpenseCategoryForm" class="add-category-form">
+                <input type="text" id="newExpenseCategory" placeholder="Nova categoria de despesa" required>
+                <button type="submit" class="btn btn-primary">
+                  <i data-lucide="plus" width="16" height="16"></i>
+                  Adicionar
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Configurações -->
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Configurações</h2>
+        <button class="modal-close" onclick="closeSettings()">
+          <i data-lucide="x" width="24" height="24"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="setting-item">
+          <label>Moeda</label>
+          <select id="currencySelect" onchange="changeCurrency(this.value)">
+            <option value="BRL">Real (R$)</option>
+            <option value="USD">Dólar ($)</option>
+            <option value="EUR">Euro (€)</option>
+          </select>
+        </div>
+        <div class="setting-item">
+          <button class="btn btn-danger" onclick="clearAllData()">
+            <i data-lucide="trash-2" width="18" height="18"></i>
+            Limpar Todos os Dados
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">Meu Saldo</h3>
+          <p class="footer-description">
+            Sistema completo de gestão financeira pessoal com análise avançada, relatórios e controle de orçamentos.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-subtitle">Funcionalidades</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="showTab('transactions'); return false;">Transações</a></li>
+            <li><a href="#" onclick="showTab('analytics'); return false;">Análises</a></li>
+            <li><a href="#" onclick="showTab('budgets'); return false;">Metas &amp; Orçamentos</a></li>
+            <li><a href="#" onclick="showTab('reports'); return false;">Relatórios</a></li>
+            <li><a href="#" onclick="showTab('categories'); return false;">Categorias</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-subtitle">Informações</h4>
+          <ul class="footer-links">
+            <li><span>Versão 1.0.0</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-subtitle">Desenvolvido por</h4>
+          <p class="footer-author">Gustavo Carvalho</p>
+          <div class="footer-social">
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 12px;">
+              Sistema de controle financeiro pessoal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>&copy; 2024 Meu Saldo. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

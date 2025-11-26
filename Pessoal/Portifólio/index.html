@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gustavo Carvalho — Estudante de Engenharia de Software</title>
+  <meta name="description" content="Portfólio de Gustavo Carvalho — Estudante de Engenharia de Software. Apaixonado por programação e desenvolvimento web." />
+  <meta name="keywords" content="estudante engenharia de software, desenvolvedor junior, html, css, javascript, python, mysql, git" />
+
+  <!-- Fonte Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Link para o CSS externo -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <!-- CURSOR ELEMENTS -->
+  <div class="cursor"></div>
+  <div class="cursor-glow"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="brand" href="#top">
+     
+
+    </a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">Sobre</a>
+      <a href="#projects" class="nav-link">Projetos</a>
+      <a href="https://www.canva.com/design/DAGJMfWmU-8/21orpcy9qF_zcq5LTg3XKg/edit?utm_content=DAGJMfWmU-8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="btn-nav">Currículo</a>
+      <a href="https://github.com/carvalhoking" target="_blank" class="btn-nav">GitHub</a>
+      <div class="status-pill">
+        <div class="status-dot"></div>
+        Aberto a oportunidades
+      </div>
+      <button class="theme-toggle" id="themeToggle">
+        <i data-lucide="moon" width="18" height="18"></i>
+      </button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content animate-fade-in">
+          <div class="hero-top">
+            <div class="hello">
+              <span class="wave"></span>
+              Olá, eu sou o 
+            </div>
+            <div class="hero-cta">
+              <a class="btn" href="#projects">
+                <i data-lucide="folder" width="18" height="18"></i>
+                Ver Projetos
+              </a>
+              <a class="btn primary" href="#contact">
+                <i data-lucide="message-circle" width="18" height="18"></i>
+                Fale Comigo
+              </a>
+            </div>
+          </div>
+          <h1 class="title">Gustavo<br/>Carvalho,</h1>
+          <p class="subtitle">
+            estudante apaixonado por programação e desenvolvimento web. Sempre em busca de aprender novas tecnologias e aplicar conhecimentos em projetos práticos.
+          </p>
+          <div class="chips">
+            <span class="chip">HTML & CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Python</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">Git & GitHub</span>
+            <span class="chip">React (aprendendo)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="container">
+      <div class="stats scroll-animate">
+        <div class="stat">
+          <div class="stat-number">+5</div>
+          <div class="stat-label">Projetos Entregues</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">+10</div>
+          <div class="stat-label">Projetos Acadêmicos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Tecnologias</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Dedicação</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header scroll-animate">
+          <h2 class="section-title">Sobre Mim</h2>
+          <p class="section-subtitle">
+            Estudante apaixonado por tecnologia, sempre em busca de novos conhecimentos e desafios na área de desenvolvimento.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card scroll-animate">
+            <div class="about-text">
+              Olá, sou Gustavo Carvalho! Minha jornada na programação começou com curiosidade sobre como os sites funcionam, e hoje estou focado em aprender desenvolvimento web e aplicar os conhecimentos adquiridos em sala de aula.
+            </div>
+            <div class="about-text">
+              Atualmente, estou me dedicando a projetos acadêmicos e pessoais para consolidar meu aprendizado em HTML, CSS, JavaScript e Python. Tenho interesse especial em desenvolvimento front-end e estou começando a explorar frameworks como React.
+            </div>
+            <div class="about-text">
+              Meu objetivo é me tornar um desenvolvedor full-stack competente e contribuir para projetos que façam a diferença. Estou sempre aberto a feedback e novas oportunidades de aprendizado.
+            </div>
+          </div>
+          <div class="scroll-animate">
+            <h3 style="margin-bottom: 24px; color: var(--text); font-weight: 600;">Tecnologias & Ferramentas</h3>
+            <div class="skills-grid">
+              <div class="skill">
+                <i data-lucide="file-code" class="skill-icon"></i>
+                <div class="skill-name">HTML</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="palette" class="skill-icon"></i>
+                <div class="skill-name">CSS</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="code" class="skill-icon"></i>
+                <div class="skill-name">JavaScript</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="file-code" class="skill-icon"></i>
+                <div class="skill-name">TypeScript</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="atom" class="skill-icon"></i>
+                <div class="skill-name">React</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="server" class="skill-icon"></i>
+                <div class="skill-name">Node.js</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="code" class="skill-icon"></i>
+                <div class="skill-name">Python</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="database" class="skill-icon"></i>
+                <div class="skill-name">MySQL</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="git-branch" class="skill-icon"></i>
+                <div class="skill-name">Git</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="github" class="skill-icon"></i>
+                <div class="skill-name">GitHub</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="terminal" class="skill-icon"></i>
+                <div class="skill-name">Terminal</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="package" class="skill-icon"></i>
+                <div class="skill-name">NPM</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="layers" class="skill-icon"></i>
+                <div class="skill-name">REST API</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="braces" class="skill-icon"></i>
+                <div class="skill-name">JSON</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="globe" class="skill-icon"></i>
+                <div class="skill-name">Web</div>
+              </div>
+              <div class="skill">
+                <i data-lucide="settings" class="skill-icon"></i>
+                <div class="skill-name">VS Code</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header scroll-animate">
+          <h2 class="section-title">Formação</h2>
+          <p class="section-subtitle">
+            Minha trajetória acadêmica e experiências de aprendizado.
+          </p>
+        </div>
+        <div class="timeline scroll-animate">
+          <div class="timeline-item">
+            <div class="timeline-role">Engenharia de Software</div>
+            <div class="timeline-company">Universidade Mogi das Cruzes (UMC)</div>
+            <div class="timeline-period">2026 - Atual</div>
+            <div class="timeline-description">
+              Curso superior focado em desenvolvimento de software, banco de dados, programação web e mobile. Aprendendo sobre metodologias ágeis, estruturas de dados, algoritmos e boas práticas de programação.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-role">Técnico de Desenvolvimento de Sistemas</div>
+            <div class="timeline-company">SENAI</div>
+            <div class="timeline-period">2024 - 2025</div>
+            <div class="timeline-description">
+                Curso técnico com foco em desenvolvimento de sistemas, incluindo programação em diversas linguagens, desenvolvimento web, banco de dados e boas práticas de desenvolvimento.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header scroll-animate">
+          <h2 class="section-title">Projetos</h2>
+          <p class="section-subtitle">
+            Uma seleção dos meus projetos de estudo e trabalhos.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card scroll-animate">
+            <div class="project-image">
+              <img src="https://nucleocursos.com.br/blog/wp-content/uploads/2024/03/Curso-de-barbearia-profissional.jpg" alt="Barbearia Website">
+            </div>
+            <div class="project-content">
+              <div class="project-category">Website</div>
+              <h3 class="project-title">Site da Barbearia</h3>
+              <p class="project-description">
+                Website responsivo criado como projeto acadêmico. Inclui design moderno, seções informativas e layout otimizado para diferentes dispositivos.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <div class="project-links">
+                <a href="https://carvalhoking.github.io/projeto_web/barbearia" target="_blank" class="project-link">
+                  <i data-lucide="external-link" width="16" height="16"></i>
+                  Ver
+                </a>
+
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card scroll-animate">
+            <div class="project-image" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); display: flex; align-items: center; justify-content: center;">
+              <i data-lucide="wallet" width="64" height="64" style="color: white;"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-category">Aplicação Web</div>
+              <h3 class="project-title">Meu Saldo</h3>
+              <p class="project-description">
+                Sistema completo de controle financeiro pessoal com gestão de receitas e despesas, gráficos interativos, categorização de transações, filtros avançados e análise de saldo em tempo real. Desenvolvido com Chart.js.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Chart.js</span>
+                <span class="tech-tag">LocalStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="controle-financeiro/index.html" target="_blank" class="project-link">
+                  <i data-lucide="external-link" width="16" height="16"></i>
+                  Ver
+                </a>
+               
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card scroll-animate">
+            <div class="project-image">
+              <img src="img/cardapiowl.png" alt="Cardápio Online World Lovers">
+            </div>
+            <div class="project-content">
+              <div class="project-category">Website</div>
+              <h3 class="project-title">Cardápio Online - World Lovers</h3>
+              <p class="project-description">
+                Website completo para hamburgueria com cardápio interativo, seções de sobre, contato e informações da empresa. Design moderno, responsivo e com alternância de tema claro/escuro.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Responsivo</span>
+              </div>
+              <div class="project-links">
+                <a href="https://cardapiowl.netlify.app" target="_blank" class="project-link">
+                  <i data-lucide="external-link" width="16" height="16"></i>
+                  Ver
+                </a>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card scroll-animate">
+            <div class="project-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); display: flex; align-items: center; justify-content: center;">
+              <i data-lucide="user-plus" width="64" height="64" style="color: white;"></i>
+            </div>
+            <div class="project-content">
+              <div class="project-category">Sistema</div>
+              <h3 class="project-title">Sistema de Cadastro</h3>
+              <p class="project-description">
+                Sistema completo de cadastro de usuários com validação de formulários, edição, exclusão, estatísticas em tempo real e armazenamento local. Interface moderna e responsiva.
+              </p>
+              <div class="project-tech">
+                <span class="tech-tag">HTML</span>
+                <span class="tech-tag">CSS</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">LocalStorage</span>
+              </div>
+              <div class="project-links">
+                <a href="cadastro.html" target="_blank" class="project-link">
+                  <i data-lucide="external-link" width="16" height="16"></i>
+                  Ver
+                </a>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info scroll-animate">
+            <h2 class="contact-title">Vamos Conversar?</h2>
+            <p class="contact-subtitle">
+              Estou sempre aberto a feedback, oportunidades de aprendizado e novos desafios. Entre em contato!
+            </p>
+            <div class="contact-methods">
+              <a href="https://wa.me/5511977264741" target="_blank" class="contact-method">
+                <i data-lucide="message-circle" class="contact-icon"></i>
+                <span class="contact-text">WhatsApp</span>
+              </a>
+              <a href="mailto:gusev7n@mail.com" class="contact-method">
+                <i data-lucide="mail" class="contact-icon"></i>
+                <span class="contact-text">gusev7n@gmail.com</span>
+              </a>
+              <a href="https://www.linkedin.com/in/gustavo-carvalho-9a52102b2" target="_blank" class="contact-method">
+                <i data-lucide="linkedin" class="contact-icon"></i>
+                <span class="contact-text">LinkedIn</span>
+              </a>
+              <a href="https://github.com/carvalhoking" target="_blank" class="contact-method">
+                <i data-lucide="github" class="contact-icon"></i>
+                <span class="contact-text">GitHub</span>
+              </a>
+            </div>
+          </div>
+          <div class="scroll-animate" style="text-align: center;">
+            <div style="width: 300px; height: 300px; margin: 0 auto; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.2);">
+              <img src="img/foto perfil.png" alt="Gustavo Carvalho" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#about" class="footer-link">Sobre</a>
+          <a href="#projects" class="footer-link">Projetos</a>
+          <a href="mailto:gusev7n@gmail.com" class="footer-link">Contato</a>
+        </div>
+        <p>©Gustavo Carvalho | Todos diretos reservados </p>
+        <p></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Link para o JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>
+
