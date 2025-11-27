@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Todas as Telas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .category {
+            margin-bottom: 40px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+        
+        .category h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .category h2::before {
+            content: "📁";
+            font-size: 1.2em;
+        }
+        
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        
+        .link-item {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #333;
+            display: block;
+        }
+        
+        .link-item:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+        
+        .link-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .link-item span {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .stats h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Índice de Todas as Telas</h1>
+        <p class="subtitle">Navegação completa de todos os projetos e páginas</p>
+        
+        <div class="stats">
+            <h3>📊 Estatísticas do Projeto</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">47</span>
+                    <span class="stat-label">Telas HTML</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Categorias</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projetos Principais -->
+        <div class="category">
+            <h2>Projetos Principais</h2>
+            <div class="links-grid">
+                <a href="index.html" class="link-item">
+                    <strong>Página Principal</strong>
+                    <span>index.html</span>
+                </a>
+                <a href="projetos_web/index.html" class="link-item">
+                    <strong>Projetos Web</strong>
+                    <span>projetos_web/index.html</span>
+                </a>
+                <a href="barbearia/index.html" class="link-item">
+                    <strong>Barbearia</strong>
+                    <span>barbearia/index.html</span>
+                </a>
+                <a href="ecociclo/index.html" class="link-item">
+                    <strong>EcoCiclo</strong>
+                    <span>ecociclo/index.html</span>
+                </a>
+                <a href="cafeteria/index.html" class="link-item">
+                    <strong>Cafeteria</strong>
+                    <span>cafeteria/index.html</span>
+                </a>
+                <a href="microempresa/index.html" class="link-item">
+                    <strong>Microempresa</strong>
+                    <span>microempresa/index.html</span>
+                </a>
+                <a href="microempresa/produtos.html" class="link-item">
+                    <strong>Microempresa - Produtos</strong>
+                    <span>microempresa/produtos.html</span>
+                </a>
+                <a href="microempresa/contato.html" class="link-item">
+                    <strong>Microempresa - Contato</strong>
+                    <span>microempresa/contato.html</span>
+                </a>
+                <a href="microempresa/sobre.html" class="link-item">
+                    <strong>Microempresa - Sobre</strong>
+                    <span>microempresa/sobre.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Projetos Pessoais -->
+        <div class="category">
+            <h2>Projetos Pessoais</h2>
+            <div class="links-grid">
+                <a href="Pessoal/Portifólio/index.html" class="link-item">
+                    <strong>Portfólio</strong>
+                    <span>Pessoal/Portifólio/index.html</span>
+                </a>
+                <a href="Pessoal/Portifólio/cadastro.html" class="link-item">
+                    <strong>Portfólio - Cadastro</strong>
+                    <span>Pessoal/Portifólio/cadastro.html</span>
+                </a>
+                <a href="Pessoal/controle-financeiro/index.html" class="link-item">
+                    <strong>Controle Financeiro</strong>
+                    <span>Pessoal/controle-financeiro/index.html</span>
+                </a>
+                <a href="perfil/index.html" class="link-item">
+                    <strong>Perfil</strong>
+                    <span>perfil/index.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Projetos de Aprendizado -->
+        <div class="category">
+            <h2>Projetos de Aprendizado</h2>
+            <div class="links-grid">
+                <a href="projeto_1/index.html" class="link-item">
+                    <strong>Projeto 1</strong>
+                    <span>projeto_1/index.html</span>
+                </a>
+                <a href="projeto_2/index.html" class="link-item">
+                    <strong>Projeto 2</strong>
+                    <span>projeto_2/index.html</span>
+                </a>
+                <a href="projeto_2/h1-h6.html" class="link-item">
+                    <strong>Projeto 2 - H1-H6</strong>
+                    <span>projeto_2/h1-h6.html</span>
+                </a>
+                <a href="projeto_2/a-hred.html" class="link-item">
+                    <strong>Projeto 2 - Links</strong>
+                    <span>projeto_2/a-hred.html</span>
+                </a>
+                <a href="projeto_3/index.html" class="link-item">
+                    <strong>Projeto 3</strong>
+                    <span>projeto_3/index.html</span>
+                </a>
+                <a href="projeto_3/lista.html" class="link-item">
+                    <strong>Projeto 3 - Lista</strong>
+                    <span>projeto_3/lista.html</span>
+                </a>
+                <a href="projeto_3/tabelas.html" class="link-item">
+                    <strong>Projeto 3 - Tabelas</strong>
+                    <span>projeto_3/tabelas.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Efeitos de Transição CSS -->
+        <div class="category">
+            <h2>Efeitos de Transição CSS</h2>
+            <div class="links-grid">
+                <a href="Efeitos de Transição em CSS/Borda/index.html" class="link-item">
+                    <strong>Borda</strong>
+                    <span>Efeitos de Transição em CSS/Borda/index.html</span>
+                </a>
+                <a href="Efeitos de Transição em CSS/Raio da Borda (Border-radius)/index.html" class="link-item">
+                    <strong>Raio da Borda</strong>
+                    <span>Efeitos de Transição em CSS/Raio da Borda/index.html</span>
+                </a>
+                <a href="Efeitos de Transição em CSS/Tamanho/index.html" class="link-item">
+                    <strong>Tamanho</strong>
+                    <span>Efeitos de Transição em CSS/Tamanho/index.html</span>
+                </a>
+                <a href="Efeitos de Transição em CSS/Transformação (Escala)/index.html" class="link-item">
+                    <strong>Transformação (Escala)</strong>
+                    <span>Efeitos de Transição em CSS/Transformação/index.html</span>
+                </a>
+                <a href="Efeitos de Transição em CSS/Transição de Cor de Fundo/index.html" class="link-item">
+                    <strong>Transição de Cor de Fundo</strong>
+                    <span>Efeitos de Transição em CSS/Transição de Cor de Fundo/index.html</span>
+                </a>
+                <a href="Efeitos de Transição em CSS/Transição de Cor de Texto/index.html" class="link-item">
+                    <strong>Transição de Cor de Texto</strong>
+                    <span>Efeitos de Transição em CSS/Transição de Cor de Texto/index.html</span>
+                </a>
+                <a href="Efeitos de Transição em CSS/Transição de Opacidade/index.html" class="link-item">
+                    <strong>Transição de Opacidade</strong>
+                    <span>Efeitos de Transição em CSS/Transição de Opacidade/index.html</span>
+                </a>
+                <a href="Efeitos de Transição em CSS/Transição de Posição/index.html" class="link-item">
+                    <strong>Transição de Posição</strong>
+                    <span>Efeitos de Transição em CSS/Transição de Posição/index.html</span>
+                </a>
+                <a href="Efeitos de Transição em CSS/Transição Múltipla/index.html" class="link-item">
+                    <strong>Transição Múltipla</strong>
+                    <span>Efeitos de Transição em CSS/Transição Múltipla/index.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Componentes e Utilitários -->
+        <div class="category">
+            <h2>Componentes e Utilitários</h2>
+            <div class="links-grid">
+                <a href="formulario/index.html" class="link-item">
+                    <strong>Formulário</strong>
+                    <span>formulario/index.html</span>
+                </a>
+                <a href="matricula/index.html" class="link-item">
+                    <strong>Matrícula</strong>
+                    <span>matricula/index.html</span>
+                </a>
+                <a href="menu_dropdown/index.html" class="link-item">
+                    <strong>Menu Dropdown</strong>
+                    <span>menu_dropdown/index.html</span>
+                </a>
+                <a href="Menu lateral/index.html" class="link-item">
+                    <strong>Menu Lateral</strong>
+                    <span>Menu lateral/index.html</span>
+                </a>
+                <a href="Menu lateral/site.html" class="link-item">
+                    <strong>Menu Lateral - Site</strong>
+                    <span>Menu lateral/site.html</span>
+                </a>
+                <a href="Gerador de Senhas/index.html" class="link-item">
+                    <strong>Gerador de Senhas</strong>
+                    <span>Gerador de Senhas/index.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Vídeo e Mídia -->
+        <div class="category">
+            <h2>Vídeo e Mídia</h2>
+            <div class="links-grid">
+                <a href="video/index.html" class="link-item">
+                    <strong>Vídeo</strong>
+                    <span>video/index.html</span>
+                </a>
+                <a href="video/video.html" class="link-item">
+                    <strong>Vídeo - Página</strong>
+                    <span>video/video.html</span>
+                </a>
+                <a href="video/audio.html" class="link-item">
+                    <strong>Áudio</strong>
+                    <span>video/audio.html</span>
+                </a>
+                <a href="video/botao.html" class="link-item">
+                    <strong>Botão</strong>
+                    <span>video/botao.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- HTML Semântico -->
+        <div class="category">
+            <h2>HTML Semântico</h2>
+            <div class="links-grid">
+                <a href="semantico/index.html" class="link-item">
+                    <strong>HTML Semântico</strong>
+                    <span>semantico/index.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Site Mobile -->
+        <div class="category">
+            <h2>Site Mobile</h2>
+            <div class="links-grid">
+                <a href="site_mobile_completo/site_mobile/index.html" class="link-item">
+                    <strong>Site Mobile Completo</strong>
+                    <span>site_mobile_completo/site_mobile/index.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- World Lovers -->
+        <div class="category">
+            <h2>World Lovers</h2>
+            <div class="links-grid">
+                <a href="World Lovers/index.html" class="link-item">
+                    <strong>World Lovers</strong>
+                    <span>World Lovers/index.html</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Arquivos de Suporte -->
+        <div class="category">
+            <h2>Arquivos de Suporte</h2>
+            <div class="links-grid">
+                <a href="barbearia/imgs/🧔_♂️ - Projeto Barbearia.html" class="link-item">
+                    <strong>Projeto Barbearia (Arquivo)</strong>
+                    <span>barbearia/imgs/🧔_♂️ - Projeto Barbearia.html</span>
+                </a>
+                <a href="barbearia/imgs/🧔_♂️ - Projeto Barbearia_files/app.html" class="link-item">
+                    <strong>App HTML</strong>
+                    <span>barbearia/imgs/🧔_♂️ - Projeto Barbearia_files/app.html</span>
+                </a>
+                <a href="barbearia/imgs/🧔_♂️ - Projeto Barbearia_files/proxy.html" class="link-item">
+                    <strong>Proxy HTML</strong>
+                    <span>barbearia/imgs/🧔_♂️ - Projeto Barbearia_files/proxy.html</span>
+                </a>
+                <a href="barbearia/imgs/🧔_♂️ - Projeto Barbearia_files/RotateCookiesPage.html" class="link-item">
+                    <strong>Rotate Cookies Page</strong>
+                    <span>barbearia/imgs/🧔_♂️ - Projeto Barbearia_files/RotateCookiesPage.html</span>
+                </a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #e0e0e0; color: #666;">
+            <p>Total de telas listadas: <strong>47</strong></p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Gerado automaticamente - Índice completo de todas as telas do projeto</p>
+        </div>
+    </div>
+</body>
+</html>
