@@ -7,28 +7,31 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { useAuth } from '../contexts/AuthContext';
 import {
-  LoginScreen,
+  TelaInicial,
+  TelaLogin,
   RegisterScreen,
-  HomeScreen,
-  AddRoutineScreen,
-  ProfileScreen,
+  TelaHabitos,
+  TelaNovoHabito,
+  TelaPerfil,
+  TelaDetalhesHabito,
 } from '../screens';
 import { colors } from '../theme/colors';
 
 export type AuthStackParamList = {
-  Login: undefined;
+  TelaInicial: undefined;
+  TelaLogin: undefined;
   Register: undefined;
 };
 
 export type MainTabParamList = {
-  Home: undefined;
-  AddRoutine: undefined;
-  Profile: undefined;
+  Habitos: undefined;
+  NovoHabito: undefined;
+  Perfil: undefined;
 };
 
 export type RootStackParamList = {
   MainTabs: undefined;
-  AddRoutineModal: undefined;
+  TelaDetalhesHabito: { routineId: string };
 };
 
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
@@ -40,9 +43,8 @@ const CustomTabBar = ({ state, descriptors, navigation }: any) => {
     <View style={styles.tabBarContainer}>
       <View style={styles.tabBar}>
         {state.routes.map((route: any, index: number) => {
-          const { options } = descriptors[route.key];
           const isFocused = state.index === index;
-          const isAddButton = route.name === 'AddRoutine';
+          const isAddButton = route.name === 'NovoHabito';
 
           const onPress = () => {
             const event = navigation.emit({
@@ -57,11 +59,11 @@ const CustomTabBar = ({ state, descriptors, navigation }: any) => {
           };
 
           let iconName: keyof typeof Ionicons.glyphMap = 'home-outline';
-          if (route.name === 'Home') {
+          if (route.name === 'Habitos') {
             iconName = isFocused ? 'home' : 'home-outline';
-          } else if (route.name === 'Profile') {
+          } else if (route.name === 'Perfil') {
             iconName = isFocused ? 'person' : 'person-outline';
-          } else if (route.name === 'AddRoutine') {
+          } else if (route.name === 'NovoHabito') {
             iconName = 'add';
           }
 
@@ -113,9 +115,9 @@ const MainTabs = () => {
         headerShown: false,
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="AddRoutine" component={AddRoutineScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen name="Habitos" component={TelaHabitos} />
+      <Tab.Screen name="NovoHabito" component={TelaNovoHabito} />
+      <Tab.Screen name="Perfil" component={TelaPerfil} />
     </Tab.Navigator>
   );
 };
@@ -128,7 +130,8 @@ const AuthNavigator = () => {
         animation: 'slide_from_right',
       }}
     >
-      <AuthStack.Screen name="Login" component={LoginScreen} />
+      <AuthStack.Screen name="TelaInicial" component={TelaInicial} />
+      <AuthStack.Screen name="TelaLogin" component={TelaLogin} />
       <AuthStack.Screen name="Register" component={RegisterScreen} />
     </AuthStack.Navigator>
   );
@@ -143,11 +146,11 @@ const MainNavigator = () => {
     >
       <RootStack.Screen name="MainTabs" component={MainTabs} />
       <RootStack.Screen
-        name="AddRoutineModal"
-        component={AddRoutineScreen}
+        name="TelaDetalhesHabito"
+        component={TelaDetalhesHabito}
         options={{
           presentation: 'modal',
-          animation: 'slide_from_bottom',
+          animation: 'slide_from_right',
         }}
       />
     </RootStack.Navigator>

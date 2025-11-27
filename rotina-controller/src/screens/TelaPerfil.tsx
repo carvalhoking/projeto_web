@@ -22,7 +22,7 @@ interface MenuItem {
   isDestructive?: boolean;
 }
 
-export const ProfileScreen: React.FC = () => {
+export const TelaPerfil: React.FC = () => {
   const { user, signOut } = useAuth();
   const { routines } = useRoutines();
 
