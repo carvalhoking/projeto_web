@@ -12,7 +12,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
 import { useRoutines } from '../contexts/RoutineContext';
-import { colors, categoryIcons } from '../theme/colors';
+import { colors } from '../theme/colors';
 import { DayOfWeek, RoutineCategory, CategoryInfo } from '../types';
 import { useNavigation } from '@react-navigation/native';
 
@@ -29,7 +29,7 @@ const CATEGORIES: CategoryInfo[] = [
   { name: 'outros', icon: 'ellipsis-horizontal-outline', color: colors.categories.outros },
 ];
 
-export const AddRoutineScreen: React.FC = () => {
+export const TelaNovoHabito: React.FC = () => {
   const navigation = useNavigation();
   const { addRoutine } = useRoutines();
   

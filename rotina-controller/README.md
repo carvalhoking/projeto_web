@@ -34,11 +34,13 @@ rotina-controller/
 │   ├── navigation/         # Configuração de navegação
 │   │   └── AppNavigator.tsx
 │   ├── screens/            # Telas do app
-│   │   ├── LoginScreen.tsx
+│   │   ├── TelaInicial.tsx
+│   │   ├── TelaLogin.tsx
 │   │   ├── RegisterScreen.tsx
-│   │   ├── HomeScreen.tsx
-│   │   ├── AddRoutineScreen.tsx
-│   │   └── ProfileScreen.tsx
+│   │   ├── TelaHabitos.tsx
+│   │   ├── TelaNovoHabito.tsx
+│   │   ├── TelaDetalhesHabito.tsx
+│   │   └── TelaPerfil.tsx
 │   ├── theme/              # Tema e cores
 │   │   └── colors.ts
 │   └── types/              # Tipos TypeScript
@@ -89,6 +91,10 @@ npm run web
 
 ## 📱 Telas
 
+### Tela Inicial (Splash)
+- Identidade visual com animação
+- Carregamento de contexto e redirecionamento automático
+
 ### Tela de Login
 - Campo de email e senha
 - Opção de mostrar/ocultar senha
@@ -100,18 +106,23 @@ npm run web
 - Validação de requisitos de senha
 - Link para voltar ao login
 
-### Tela Principal (Home)
+### Tela de Hábitos
 - Saudação personalizada
 - Calendário semanal
 - Card de progresso diário
 - Lista de rotinas do dia
 - Estatísticas rápidas
 
-### Tela de Adicionar Rotina
+### Tela de Novo Hábito
 - Campo de título e descrição
 - Seleção de horário
 - Seleção de dias da semana
 - Categorias com cores personalizadas
+
+### Tela de Detalhes do Hábito
+- Histórico semanal visual
+- Ações de concluir, editar e excluir
+- Formulário inline para ajustes rápidos
 
 ### Tela de Perfil
 - Informações do usuário

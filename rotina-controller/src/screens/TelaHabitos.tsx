@@ -5,21 +5,19 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
-  Dimensions,
-  Animated,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 import { useAuth } from '../contexts/AuthContext';
 import { useRoutines } from '../contexts/RoutineContext';
 import { colors, categoryIcons } from '../theme/colors';
 import { DayOfWeek, Routine } from '../types';
 
-const { width } = Dimensions.get('window');
-
 const DAYS: DayOfWeek[] = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
-export const HomeScreen: React.FC = () => {
+export const TelaHabitos: React.FC = () => {
+  const navigation = useNavigation<any>();
   const { user } = useAuth();
   const { getTodayRoutines, toggleComplete, getCompletedCount } = useRoutines();
   const [greeting, setGreeting] = useState('');
@@ -51,6 +49,10 @@ export const HomeScreen: React.FC = () => {
     return today.toLocaleDateString('pt-BR', options);
   };
 
+  const openRoutineDetails = (routine: Routine) => {
+    navigation.navigate('TelaDetalhesHabito', { routineId: routine.id });
+  };
+
   const renderRoutineCard = (routine: Routine) => {
     const iconName = categoryIcons[routine.category] || 'ellipse-outline';
     
@@ -58,7 +60,7 @@ export const HomeScreen: React.FC = () => {
       <TouchableOpacity
         key={routine.id}
         style={[styles.routineCard, routine.isCompleted && styles.routineCardCompleted]}
-        onPress={() => toggleComplete(routine.id)}
+        onPress={() => openRoutineDetails(routine)}
         activeOpacity={0.7}
       >
         <View style={[styles.routineColorBar, { backgroundColor: routine.color }]} />
@@ -93,7 +95,11 @@ export const HomeScreen: React.FC = () => {
           </View>
         </View>
 
-        <View style={styles.routineCheck}>
+        <TouchableOpacity
+          style={styles.routineCheck}
+          onPress={() => toggleComplete(routine.id)}
+          activeOpacity={0.8}
+        >
           <View style={[
             styles.checkbox,
             routine.isCompleted && { backgroundColor: colors.success, borderColor: colors.success }
@@ -102,7 +108,7 @@ export const HomeScreen: React.FC = () => {
               <Ionicons name="checkmark" size={16} color={colors.text} />
             )}
           </View>
-        </View>
+        </TouchableOpacity>
       </TouchableOpacity>
     );
   };

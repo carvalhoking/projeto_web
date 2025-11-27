@@ -19,11 +19,11 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 const { width, height } = Dimensions.get('window');
 
-type LoginScreenProps = {
+type TelaLoginProps = {
   navigation: NativeStackNavigationProp<any>;
 };
 
-export const LoginScreen: React.FC<LoginScreenProps> = ({ navigation }) => {
+export const TelaLogin: React.FC<TelaLoginProps> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);

@@ -1,5 +1,7 @@
-export { LoginScreen } from './LoginScreen';
+export { TelaInicial } from './TelaInicial';
+export { TelaLogin } from './TelaLogin';
 export { RegisterScreen } from './RegisterScreen';
-export { HomeScreen } from './HomeScreen';
-export { AddRoutineScreen } from './AddRoutineScreen';
-export { ProfileScreen } from './ProfileScreen';
+export { TelaHabitos } from './TelaHabitos';
+export { TelaNovoHabito } from './TelaNovoHabito';
+export { TelaDetalhesHabito } from './TelaDetalhesHabito';
+export { TelaPerfil } from './TelaPerfil';
